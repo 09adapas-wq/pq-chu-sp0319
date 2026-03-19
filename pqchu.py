@@ -69,8 +69,9 @@ class PQApp(tk.Frame):
     def solve(self):
         left_poly, right_poly = self.read_fields()
         left_poly = left_poly - right_poly
-        left_poly = 0 
-        left_poly = left_poly * 1/left_poly.a 
+        right_poly = 0 
+        left_poly = left_poly * left_poly.a**-1  
+        
 
 
         self.answertext.set(str(left_poly))
