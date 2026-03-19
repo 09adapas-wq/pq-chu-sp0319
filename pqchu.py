@@ -2,6 +2,7 @@
 import tkinter as tk
 from tkinter import N, W, E, S
 from tkinter import ttk
+from turtle import left, right
 from polynomial import Poly2
 
 class PQApp(tk.Frame):
@@ -67,7 +68,12 @@ class PQApp(tk.Frame):
     
     def solve(self):
         left_poly, right_poly = self.read_fields()
-        self.answertext.set("The Solve button was pressed.")
+        left_poly = left_poly - right_poly
+        left_poly = 0 
+        left_poly = left_poly * 1/left_poly.a 
+
+
+        self.answertext.set(str(left_poly))
 
         ##NEEDS CODE TO SOLVE EQUATION HERE. CAN YOU DO IT?
 
