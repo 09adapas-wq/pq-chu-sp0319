@@ -68,11 +68,15 @@ class PQApp(tk.Frame):
     
     def solve(self):
         left_poly, right_poly = self.read_fields()
-        left_poly = left_poly - right_poly
-        right_poly = 0 
-        left_poly = left_poly * left_poly.a**-1  
-        
 
+        try: 
+            left_poly = left_poly - right_poly
+            right_poly = 0 
+            left_poly = left_poly.scale( left_poly.a**-1  )
+            
+        p_pq = left_poly.scale * left_poly.a**-1 
+        q_pq = left_poly.c * left_poly.a**-1
+self.answertext.set("Error: Invalid input")
 
         self.answertext.set(str(left_poly))
 
